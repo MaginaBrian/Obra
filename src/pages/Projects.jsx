@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <>
       <h1 className="page-title">Obra Projects</h1>
-      <p className="lead">A short list of assignments associated with the practice. The role is cost, contract and delivery — not the architect’s name on the drawing.</p>
+      <p className="lead">Named assignments from the project list. Photos without a name in the list stay untitled.</p>
       <section className="section" style={{ paddingTop: 24 }}>
         <div className="wrap">
           {stories.map((story) => (
@@ -22,7 +22,6 @@ export default function Projects() {
               </div>
             </article>
           ))}
-          <p className="note">Photographs are representative of building type. They are not records of these sites.</p>
         </div>
       </section>
     </>

@@ -18,34 +18,40 @@ export default function PortfolioGrid({ items }) {
   return (
     <>
       <ul className="filters">
-        {filters.map((name) => (
-          <li key={name}>
+        {filters.map((item) => (
+          <li key={item.id}>
             <button
               type="button"
-              className={filter === name ? "is-on" : undefined}
-              onClick={() => setFilter((current) => (current === name ? "all" : name))}
+              className={filter === item.id ? "is-on" : undefined}
+              onClick={() => setFilter((current) => (current === item.id ? "all" : item.id))}
             >
-              {name.charAt(0).toUpperCase() + name.slice(1)}
+              {item.label}
             </button>
           </li>
         ))}
       </ul>
-      <div className="grid">
-        {visible.map((item) => (
-          <article className="card" key={item.title}>
-            <button className="card-hit" type="button" onClick={() => setPhoto(item)}>
-              <img src={item.image} alt={item.alt} />
-              <span>{item.title}</span>
-            </button>
-          </article>
-        ))}
-      </div>
-      <p className="note">Photographs show the kinds of buildings the practice advises on. They are not site records of the named assignments.</p>
+      {visible.length === 0 ? (
+        <p className="note">Photos for this category are next.</p>
+      ) : (
+        <div className="grid">
+          {visible.map((item) => {
+            const label = [item.title, item.place].filter(Boolean).join(", ")
+            return (
+              <article className="card" key={item.id}>
+                <button className="card-hit" type="button" onClick={() => setPhoto(item)}>
+                  <img src={item.image} alt={item.alt} />
+                  {label ? <span>{label}</span> : null}
+                </button>
+              </article>
+            )
+          })}
+        </div>
+      )}
       {photo && (
         <div className="lightbox is-open" onClick={(event) => { if (event.target === event.currentTarget) setPhoto(null) }}>
           <button className="lb-close" type="button" aria-label="Close" onClick={() => setPhoto(null)}>×</button>
-          <img src={photo.image} alt={photo.caption} />
-          <p>{photo.caption}</p>
+          <img src={photo.image} alt={photo.alt} />
+          <p>{[photo.title, photo.place].filter(Boolean).join(", ")}</p>
         </div>
       )}
     </>

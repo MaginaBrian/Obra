@@ -10,7 +10,7 @@ export default function Portfolio() {
   return (
     <>
       <h1 className="page-title">Portfolio</h1>
-      <p className="lead">Selected assignments associated with the practice, across housing, institutions, commercial work and infrastructure.</p>
+      <p className="lead">Projects from the list. A photo is titled only where the list gives a name.</p>
       <section className="section" style={{ paddingTop: 36 }}>
         <div className="wrap">
           <PortfolioGrid items={projects} />

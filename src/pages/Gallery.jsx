@@ -20,14 +20,13 @@ export default function Gallery() {
   return (
     <>
       <h1 className="page-title">Gallery</h1>
-      <p className="lead">Housing, civic buildings, workplaces and infrastructure. Click a photograph to open it.</p>
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="wrap">
           <div className="grid">
             {gallery.map(([src, label, caption]) => (
               <button className="card-hit" type="button" key={src} onClick={() => setPhoto({ src, caption })}>
-                <img src={src} alt={caption} />
-                <span>{label}</span>
+                <img src={src} alt={caption || "Residential property"} />
+                {label ? <span>{label}</span> : null}
               </button>
             ))}
           </div>

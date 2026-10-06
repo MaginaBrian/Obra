@@ -12,7 +12,7 @@ export default function Layout() {
 
   useEffect(() => {
     setOpen(false)
-    if (location.hash) {
+    if (/^#[A-Za-z][\w-]*$/.test(location.hash)) {
       const target = document.querySelector(location.hash)
       if (target) {
         target.scrollIntoView()

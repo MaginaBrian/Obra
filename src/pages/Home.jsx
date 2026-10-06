@@ -50,7 +50,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <h2 className="section-title">Featured Portfolio</h2>
-          <PortfolioGrid items={projects.filter((item) => item.featured)} />
+          <PortfolioGrid items={projects} />
         </div>
       </section>
       <section className="section" style={{ paddingTop: 10 }}>
