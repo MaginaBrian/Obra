@@ -51,7 +51,6 @@ export default function Layout() {
           <li><NavLink to="/services" className={navClass}>Services</NavLink></li>
           <li><NavLink to="/portfolio" className={navClass}>Projects</NavLink></li>
           <li><NavLink to="/quality" className={navClass}>Quality Policy</NavLink></li>
-          <li><NavLink to="/projects" className={navClass}>Obra Projects</NavLink></li>
           <li className="has-sub">
             <NavLink to="/about" className={navClass}>
               About Us
@@ -61,6 +60,7 @@ export default function Layout() {
               <li><Link to="/about">The Firm</Link></li>
               <li><Link to="/about#mission">Our Mission</Link></li>
               <li><Link to="/about#vision">Our Vision</Link></li>
+              <li><Link to="/services#others">Others</Link></li>
             </ul>
           </li>
           <li><NavLink to="/contact" className={navClass}>Contact Us</NavLink></li>

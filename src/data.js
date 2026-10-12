@@ -74,6 +74,17 @@ export const serviceStages = [
       "Evaluating Variations and Contractors’ Claims",
       "Preparation of Financial Appraisals",
       "Preparation of Final Accounts",
+      "Contract Dispute Resolution Mechanisms including Arbitration",
+    ],
+  },
+  {
+    id: "others",
+    title: "Others",
+    points: [
+      "Fire loss assessment and valuation for insurance purposes",
+      "Construction Project Management/Building Management",
+      "Dilapidation reports for maintenance work",
+      "Estimates for building loans for banks and other financiers",
     ],
   },
 ]
@@ -303,20 +314,3 @@ export const projects = [
     featured: true,
   },
 ]
-
-const categoryLabel = {
-  residential: "Residential Properties",
-  public: "Public-State Institutions",
-  religious: "Religious Institutions",
-  market: "Market Complex",
-}
-
-export const stories = projects
-  .filter((item) => item.featured)
-  .map((item) => ({
-    image: item.image,
-    alt: item.alt,
-    kicker: `${categoryLabel[item.cat]} · ${item.place}`,
-    title: item.title,
-    text: item.place,
-  }))

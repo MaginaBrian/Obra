@@ -26,7 +26,7 @@ export default function Services() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap prose">
           {serviceStages.map((stage) => (
-            <div key={stage.title}>
+            <div key={stage.title} id={stage.id}>
               <h3>{stage.title}</h3>
               <ul>
                 {stage.points.map((point) => <li key={point}>{point}</li>)}
