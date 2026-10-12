@@ -9,8 +9,7 @@ export default function Projects() {
   return (
     <>
       <h1 className="page-title">Obra Projects</h1>
-      <p className="lead">Named assignments from the project list. Photos without a name in the list stay untitled.</p>
-      <section className="section" style={{ paddingTop: 24 }}>
+      <section className="section" style={{ paddingTop: 28 }}>
         <div className="wrap">
           {stories.map((story) => (
             <article className="project" key={story.title}>

@@ -1,20 +1,22 @@
 import { useState } from "react"
 
-export function ContactFacts({ showCity = false }) {
+export function ContactFacts() {
   return (
     <div>
       <h3>Obra International Ltd</h3>
       <ul className="facts">
-        {showCity && <li>Nairobi, Kenya</li>}
-        <li><b>P.O. Box:</b> 3494 – 00200 Nairobi, Kenya</li>
-        <li><b>Email:</b> <a href="mailto:info@obraint.co.ke">info@obraint.co.ke</a></li>
-        <li><b>Working Hours:</b> 8am–5pm</li>
+        <li><b>P.O. Box:</b> 3494 – 00200</li>
+        <li>Greenhouse Mall</li>
+        <li>Second Floor, Suite 10</li>
+        <li>Nairobi, Kenya</li>
+        <li><b>Office Phone:</b> <a href="tel:+254202406394">020 240 6394</a></li>
+        <li><b>E-mail:</b> <a href="mailto:info@obraint.co.ke">info@obraint.co.ke</a></li>
       </ul>
     </div>
   )
 }
 
-export default function ContactPanel({ showCity = false }) {
+export default function ContactPanel() {
   const [note, setNote] = useState("")
 
   function onSubmit(event) {
@@ -35,7 +37,7 @@ export default function ContactPanel({ showCity = false }) {
 
   return (
     <div className="contact-layout">
-      <ContactFacts showCity={showCity} />
+      <ContactFacts />
       <form className="form" onSubmit={onSubmit}>
         <input name="name" type="text" placeholder="Your Name" required aria-label="Your Name" />
         <input name="email" type="email" placeholder="Your Email" required aria-label="Your Email" />

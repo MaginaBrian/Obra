@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { services } from "../data"
+import { serviceIntro, serviceStages, services } from "../data"
 
 export default function Services() {
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Services() {
   return (
     <>
       <h1 className="page-title">Our Services</h1>
-      <p className="lead">Three disciplines on the mark: quantity surveying, project management and arbitration. The work around them follows from those.</p>
+      <p className="lead">{serviceIntro}</p>
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="wrap">
           {services.map((service) => (
@@ -17,11 +17,21 @@ export default function Services() {
               <img src={service.icon} alt="" />
               <div>
                 <h3>{service.title}</h3>
-                <ul>
-                  {service.points.map((point) => <li key={point}>{point}</li>)}
-                </ul>
+                <p>{service.summary}</p>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap prose">
+          {serviceStages.map((stage) => (
+            <div key={stage.title}>
+              <h3>{stage.title}</h3>
+              <ul>
+                {stage.points.map((point) => <li key={point}>{point}</li>)}
+              </ul>
+            </div>
           ))}
         </div>
       </section>

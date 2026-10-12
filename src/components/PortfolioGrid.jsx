@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { filters } from "../data"
 
-export default function PortfolioGrid({ items }) {
-  const [filter, setFilter] = useState("all")
+export default function PortfolioGrid({ items, initialFilter = "all" }) {
+  const [filter, setFilter] = useState(initialFilter)
   const [photo, setPhoto] = useState(null)
   const visible = filter === "all" ? items : items.filter((item) => item.cat === filter)
 

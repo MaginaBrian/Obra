@@ -49,9 +49,8 @@ export default function Layout() {
         <ul className={open ? "nav is-open" : "nav"} id="site-nav">
           <li><NavLink to="/" end className={navClass}>Home</NavLink></li>
           <li><NavLink to="/services" className={navClass}>Services</NavLink></li>
-          <li><NavLink to="/portfolio" className={navClass}>Portfolio</NavLink></li>
+          <li><NavLink to="/portfolio" className={navClass}>Projects</NavLink></li>
           <li><NavLink to="/quality" className={navClass}>Quality Policy</NavLink></li>
-          <li><NavLink to="/gallery" className={navClass}>Gallery</NavLink></li>
           <li><NavLink to="/projects" className={navClass}>Obra Projects</NavLink></li>
           <li className="has-sub">
             <NavLink to="/about" className={navClass}>
@@ -60,7 +59,8 @@ export default function Layout() {
             </NavLink>
             <ul className="sub">
               <li><Link to="/about">The Firm</Link></li>
-              <li><Link to="/about#approach">Our Approach</Link></li>
+              <li><Link to="/about#mission">Our Mission</Link></li>
+              <li><Link to="/about#vision">Our Vision</Link></li>
             </ul>
           </li>
           <li><NavLink to="/contact" className={navClass}>Contact Us</NavLink></li>

@@ -1,91 +1,79 @@
 export const slides = [
   {
     image: "/images/hero-architecture.jpg",
-    title: "Obra International Ltd",
-    text: "Quantity surveyors, project managers and arbitrators. We sit down first, count the cost, and stay with the work until it is finished.",
+    title: "Obra International",
+    text: "A multi-disciplinary construction consultancy firm specializing in Quantity Surveying, Project Management and Arbitration.",
   },
   {
     image: "/images/hero-villa.jpg",
-    title: "Luke 14:28",
-    text: "For which of you, intending to build a tower, does not sit down first and count the cost, whether he has enough to finish it.",
+    title: "Our Mission",
+    text: "To provide professional services that add value and enhance the marketability of the built environment, delivered efficiently, functionally and within acceptable cost and time.",
   },
   {
     image: "/images/hero-plans.jpg",
-    title: "Cost, contract, delivery",
-    text: "Housing, infrastructure, institutions and industry. One practice for the figure, the form of contract, and the finish.",
+    title: "Our Vision",
+    text: "To be the leading Quantity Surveying and Project Management firm, delivering our services efficiently and professionally while positively impacting the objectives of the construction industry.",
   },
 ]
+
+export const about = [
+  "Obra International is a multi-disciplinary construction consultancy firm specializing in Quantity Surveying, Project Management and Arbitration.",
+  "Established in 2010 as Obra Bills Consultants Ltd and rebranded in 2012, the firm was incorporated as a limited company in 2015. We provide professional, client-focused solutions by understanding project needs, resolving complex challenges and delivering tailored results.",
+  "Our young, dynamic team of skilled professionals combines technical expertise with innovation. We continuously invest in research, development and modern technology — including WinQS and CAD software — to ensure efficient, accurate and timely service delivery.",
+  "Guided by integrity, professionalism and a commitment to continuous improvement, Obra International delivers proactive and personalized consultancy that meets the evolving needs of our clients and the construction industry.",
+]
+
+export const mission =
+  "To provide professional services that add value and enhance the marketability of the built environment, delivered efficiently, functionally and within acceptable cost and time."
+
+export const vision =
+  "To be the leading Quantity Surveying and Project Management firm, delivering our services efficiently and professionally while positively impacting the objectives of the construction industry."
+
+export const serviceIntro =
+  "We have a broadened range of professional services beyond the traditional core of Quantity Surveying services, to meet wider client needs. Obra International is comprised of three primary divisions to conform to our service delivery system as outlined below."
 
 export const services = [
   {
     icon: "/images/illu-qs.svg",
-    title: "Quantity Surveying Services",
+    title: "Quantity Surveying",
     summary:
-      "Feasibility studies and development budgets. Cash-flow projections. Cost planning, control and estimates. Bills of quantities, tendering and final accounts.",
-    points: [
-      "Feasibility studies and developers’ budgets",
-      "Cash-flow projections across the build",
-      "Cost planning, cost control and budget estimates",
-      "Bills of quantities and specifications",
-      "Tendering procedures and tender reports",
-      "Valuations, variations and final accounts",
-    ],
+      "The practice of managing all costs relating to building and civil engineering projects. This includes preparing cost estimates, bills of quantities, cost planning, tender evaluation, valuation of works and providing financial advice throughout the project lifecycle to ensure value for money.",
   },
   {
     icon: "/images/illu-pm.svg",
     title: "Project Management",
     summary:
-      "Briefs, programmes and consultant coordination. Procurement strategy, progress and cost reporting, and a controlled handover.",
-    points: [
-      "Site and brief confirmation with the employer",
-      "Feasibility studies and reports",
-      "Advice on project finance and procurement strategy",
-      "Recommendation of consultant appointments",
-      "Programme, cost and quality reporting through construction",
-      "Handover, defects and close-out",
-    ],
+      "The process of planning, coordinating, and controlling a construction project from inception to completion. It involves managing time, cost, quality, resources and stakeholders to ensure the project is delivered successfully according to the client’s objectives.",
   },
   {
     icon: "/images/illu-arb.svg",
     title: "Arbitration",
     summary:
-      "Quantum analysis, expert evidence, and contract advice on FIDIC, NEC and JCT. Claims prepared so a tribunal can follow the money.",
+      "A formal method of resolving construction disputes outside of court, where an independent and impartial arbitrator hears both parties and makes a binding decision. It is commonly used in the construction industry to settle disagreements related to contracts, payments, delays or quality of work in a faster and more private manner than litigation.",
+  },
+]
+
+export const serviceStages = [
+  {
+    title: "At Pre-Contract Stage",
     points: [
-      "Quantum analysis of claims, disruption and prolongation",
-      "Expert evidence of fact for employers and contractors",
-      "Contract advice on FIDIC, NEC and JCT",
-      "Preparation of statements of claim and responses",
-      "Advisory work before a dispute hardens into a reference",
+      "Budget Estimates",
+      "Feasibility Studies/Developers Budgets",
+      "Preparation of Cash Flow Projections",
+      "Cost Planning and Control",
+      "Preparation of Bills of Quantities and Specifications",
+      "Tendering Procedures and advice on contracts",
+      "Tender evaluation and reporting",
+      "Negotiation with Contractors",
     ],
   },
   {
-    icon: "/images/illu-audit.svg",
-    title: "Forensic and Project Audit",
-    summary: "",
+    title: "During Post-Contract/Implementation Stage",
     points: [
-      "Independent review of cost, programme and payments",
-      "Tracing of variations, provisional sums and contingencies",
-      "Reports written for boards, funders and employers",
-    ],
-  },
-  {
-    icon: "/images/illu-claims.svg",
-    title: "Quantum and Claims",
-    summary: "",
-    points: [
-      "Build-up of measured loss, expense and prolongation",
-      "Contract documents shaped to the funding model: EPC, PPP, government and donor-funded work",
-      "Value engineering that still leaves a building that can be finished",
-    ],
-  },
-  {
-    icon: "/images/illu-verify.svg",
-    title: "Project Verification",
-    summary: "",
-    points: [
-      "Checking that what was measured is what was built",
-      "Support to certification and value-for-money reviews",
-      "A clear record for the employer, the funder and the contractor",
+      "Preparation of Interim Valuations",
+      "Evaluating Variations and Contractors’ Claims",
+      "Preparation of Financial Appraisals",
+      "Preparation of Final Accounts",
     ],
   },
 ]
@@ -101,10 +89,11 @@ export const projects = [
   {
     id: "res-01",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Stima Heights",
+    place: "Parklands, Nairobi",
     image: "/images/residential/01.jpg",
-    alt: "Residential property",
+    alt: "Stima Heights, Parklands, Nairobi",
+    featured: true,
   },
   {
     id: "res-02",
@@ -118,50 +107,56 @@ export const projects = [
   {
     id: "res-03",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Synina Apartments",
+    place: "Kileleshwa, Nairobi",
     image: "/images/residential/03.jpg",
-    alt: "Residential property",
+    alt: "Synina Apartments, Kileleshwa, Nairobi",
+    featured: true,
   },
   {
     id: "res-04",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Highrise Apartments",
+    place: "Kileleshwa, Nairobi",
     image: "/images/residential/04.jpg",
-    alt: "Residential property",
+    alt: "Highrise Apartments, Kileleshwa, Nairobi",
+    featured: true,
   },
   {
     id: "res-05",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Kilimani Apartments",
+    place: "Kilimani, Nairobi",
     image: "/images/residential/05.jpg",
-    alt: "Residential property",
+    alt: "Kilimani Apartments, Kilimani, Nairobi",
+    featured: true,
   },
   {
     id: "res-06",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Mavoko Estate",
+    place: "Mavoko, Machakos",
     image: "/images/residential/06.jpg",
-    alt: "Residential property",
+    alt: "Mavoko Estate, Mavoko, Machakos",
+    featured: true,
   },
   {
     id: "res-07",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Apple Cross Developments - B",
+    place: "Lavington, Nairobi",
     image: "/images/residential/07.jpg",
-    alt: "Residential property",
+    alt: "Apple Cross Developments - B, Lavington, Nairobi",
+    featured: true,
   },
   {
     id: "res-08",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Kilgoris Affordable Housing Project",
+    place: "Kilgoris, Narok",
     image: "/images/residential/08.jpg",
-    alt: "Residential property",
+    alt: "Kilgoris Affordable Housing Project, Kilgoris, Narok",
+    featured: true,
   },
   {
     id: "res-09",
@@ -184,18 +179,20 @@ export const projects = [
   {
     id: "res-11",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Voi Affordable Housing Project",
+    place: "Voi, Taita-Taveta",
     image: "/images/residential/11.jpg",
-    alt: "Residential property",
+    alt: "Voi Affordable Housing Project, Voi, Taita-Taveta",
+    featured: true,
   },
   {
     id: "res-12",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Limuru Affordable Housing Project",
+    place: "Limuru, Kiambu",
     image: "/images/residential/12.jpg",
-    alt: "Residential property",
+    alt: "Limuru Affordable Housing Project, Limuru, Kiambu",
+    featured: true,
   },
   {
     id: "res-13",
@@ -218,10 +215,11 @@ export const projects = [
   {
     id: "res-15",
     cat: "residential",
-    title: "",
-    place: "",
+    title: "Limuru Technical & Vocational College - Students Village",
+    place: "Limuru, Kiambu",
     image: "/images/residential/15.jpg",
-    alt: "Residential property",
+    alt: "Limuru Technical and Vocational College - Students Village, Limuru, Kiambu",
+    featured: true,
   },
   {
     id: "pub-01",
@@ -244,10 +242,11 @@ export const projects = [
   {
     id: "pub-03",
     cat: "public",
-    title: "",
-    place: "",
+    title: "Nakuru County Assembly - Offices",
+    place: "Nakuru Town, Nakuru",
     image: "/images/public/03.jpg",
-    alt: "Public-state institution",
+    alt: "Nakuru County Assembly - Offices, Nakuru Town, Nakuru",
+    featured: true,
   },
   {
     id: "pub-04",
@@ -270,10 +269,11 @@ export const projects = [
   {
     id: "mkt-02",
     cat: "market",
-    title: "",
-    place: "",
+    title: "Makawani ESP Market",
+    place: "Mbeere, Embu",
     image: "/images/market/02.jpg",
-    alt: "Market complex",
+    alt: "Makawani ESP Market, Mbeere, Embu",
+    featured: true,
   },
   {
     id: "mkt-03",
@@ -287,10 +287,11 @@ export const projects = [
   {
     id: "mkt-04",
     cat: "market",
-    title: "",
-    place: "",
+    title: "Runyenjes ESP Market",
+    place: "Runyenjes, Embu",
     image: "/images/market/04.jpg",
-    alt: "Market complex",
+    alt: "Runyenjes ESP Market, Runyenjes, Embu",
+    featured: true,
   },
   {
     id: "rel-01",
@@ -319,9 +320,3 @@ export const stories = projects
     title: item.title,
     text: item.place,
   }))
-
-export const gallery = projects.map((item) => [
-  item.image,
-  item.title || "",
-  [item.title, item.place].filter(Boolean).join(", ") || categoryLabel[item.cat],
-])

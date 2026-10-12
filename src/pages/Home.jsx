@@ -2,16 +2,12 @@ import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import Hero from "../components/Hero"
 import ContactPanel from "../components/ContactPanel"
-import PortfolioGrid from "../components/PortfolioGrid"
-import { projects, services } from "../data"
+import { filters, projects, services } from "../data"
 
 export default function Home() {
   useEffect(() => {
     document.title = "Obra International | Quantity Surveying, Project Management, Arbitration"
   }, [])
-
-  const primary = services.slice(0, 3)
-  const secondary = services.slice(3)
 
   return (
     <>
@@ -20,19 +16,11 @@ export default function Home() {
         <div className="wrap">
           <h2 className="section-title">Our Services</h2>
           <div className="service-grid">
-            {primary.map((service) => (
+            {services.map((service) => (
               <article className="service" key={service.title}>
                 <img src={service.icon} alt="" />
                 <h3>{service.title}</h3>
                 <p>{service.summary}</p>
-              </article>
-            ))}
-          </div>
-          <div className="icon-grid">
-            {secondary.map((service) => (
-              <article className="icon-card service" key={service.title}>
-                <img src={service.icon} alt="" />
-                <h3>{service.title}</h3>
               </article>
             ))}
           </div>
@@ -49,8 +37,21 @@ export default function Home() {
       </section>
       <section className="section">
         <div className="wrap">
-          <h2 className="section-title">Featured Portfolio</h2>
-          <PortfolioGrid items={projects} />
+          <h2 className="section-title">Obra Projects</h2>
+          <div className="project-list">
+            {filters.map((filter) => {
+              const sample = projects.find((item) => item.cat === filter.id)
+              if (!sample) return null
+              return (
+                <Link className="project" key={filter.id} to={`/portfolio?cat=${filter.id}`}>
+                  <img src={sample.image} alt={filter.label} />
+                  <div className="project-copy">
+                    <h3>{filter.label}</h3>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </section>
       <section className="section" style={{ paddingTop: 10 }}>

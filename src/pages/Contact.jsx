@@ -11,7 +11,7 @@ export default function Contact() {
       <h1 className="page-title">Contact Us</h1>
       <section className="section">
         <div className="wrap">
-          <ContactPanel showCity />
+          <ContactPanel />
         </div>
       </section>
     </>

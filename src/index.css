@@ -232,6 +232,8 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; color: var(--heading
   color: #2f3944;
 }
 .service p, .prose p, .icon-card p { margin: 0; color: var(--muted); font-size: 15px; }
+.prose p + p { margin-top: 16px; }
+.service-block p { margin: 0; color: #4a5560; line-height: 1.6; }
 .icon-grid { margin-top: 64px; }
 .icon-card img { width: 168px; height: 140px; margin: 0 auto 12px; object-fit: contain; }
 
@@ -462,6 +464,14 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; color: var(--heading
   gap: 48px;
   align-items: center;
 }
+.quality {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  gap: 48px 64px;
+  align-items: center;
+}
+.quality img { width: 100%; height: auto; }
+.quality .prose { margin: 0; max-width: none; }
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -493,6 +503,8 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; color: var(--heading
 .service-block ul { margin: 0; padding-left: 18px; color: #4a5560; }
 .service-block li { margin: 4px 0; }
 
+a.project { color: inherit; text-decoration: none; }
+a.project:hover h3 { color: var(--blue); }
 .project {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -561,7 +573,7 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; color: var(--heading
   }
   .nav.is-open { display: flex; }
   .sub { position: static; display: block; box-shadow: none; border: 0; padding: 0 0 0 12px; }
-  .service-grid, .icon-grid, .grid, .contact-layout, .split, .cta, .project, .service-block {
+  .service-grid, .icon-grid, .grid, .contact-layout, .split, .quality, .cta, .project, .service-block {
     grid-template-columns: 1fr;
   }
   .project:nth-child(even) .project-copy { order: 0; }
