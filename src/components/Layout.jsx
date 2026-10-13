@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { NavLink, Outlet, Link, useLocation } from "react-router-dom"
+import Seo from "./Seo"
 
 function navClass({ isActive }) {
   return isActive ? "is-active" : undefined
@@ -67,6 +68,7 @@ export default function Layout() {
         </ul>
       </header>
       <main id="main">
+        <Seo />
         <Outlet />
       </main>
       <footer className="site-footer">

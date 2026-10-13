@@ -1,11 +1,6 @@
-import { useEffect } from "react"
 import { about, mission, vision } from "../data"
 
 export default function About() {
-  useEffect(() => {
-    document.title = "About Us | Obra International"
-  }, [])
-
   return (
     <>
       <h1 className="page-title">About Us</h1>

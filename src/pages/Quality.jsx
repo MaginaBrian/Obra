@@ -1,10 +1,4 @@
-import { useEffect } from "react"
-
 export default function Quality() {
-  useEffect(() => {
-    document.title = "Quality Policy | Obra International"
-  }, [])
-
   return (
     <>
       <h1 className="page-title">Our Quality Policy</h1>

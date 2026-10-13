@@ -1,14 +1,9 @@
-import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import Hero from "../components/Hero"
 import ContactPanel from "../components/ContactPanel"
 import { filters, projects, services } from "../data"
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Obra International | Quantity Surveying, Project Management, Arbitration"
-  }, [])
-
   return (
     <>
       <Hero />

@@ -1,11 +1,6 @@
-import { useEffect } from "react"
 import { serviceIntro, serviceStages, services } from "../data"
 
 export default function Services() {
-  useEffect(() => {
-    document.title = "Services | Obra International"
-  }, [])
-
   return (
     <>
       <h1 className="page-title">Our Services</h1>

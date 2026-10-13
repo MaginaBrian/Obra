@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import PortfolioGrid from "../components/PortfolioGrid"
 import { filters, projects } from "../data"
@@ -7,10 +6,6 @@ export default function Portfolio() {
   const [params] = useSearchParams()
   const requested = params.get("cat")
   const initialFilter = filters.some((item) => item.id === requested) ? requested : "all"
-
-  useEffect(() => {
-    document.title = "Projects | Obra International"
-  }, [])
 
   return (
     <>
