@@ -34,24 +34,29 @@ export default function PortfolioGrid({ items, initialFilter = "all" }) {
         <p className="note">Photos for this category are next.</p>
       ) : (
         <div className="grid">
-          {visible.map((item) => {
-            const label = [item.title, item.place].filter(Boolean).join(", ")
-            return (
-              <article className="card" key={item.id}>
-                <button className="card-hit" type="button" onClick={() => setPhoto(item)}>
-                  <img src={item.image} alt={item.alt} />
-                  {label ? <span>{label}</span> : null}
-                </button>
-              </article>
-            )
-          })}
+          {visible.map((item) => (
+            <article className="card" key={item.id}>
+              <button className="card-hit" type="button" onClick={() => setPhoto(item)}>
+                <img src={item.image} alt={item.alt} />
+                {(item.title || item.place) && (
+                  <span>
+                    {item.title && <strong>{item.title}</strong>}
+                    {item.place && <small>{item.place}</small>}
+                  </span>
+                )}
+              </button>
+            </article>
+          ))}
         </div>
       )}
       {photo && (
         <div className="lightbox is-open" onClick={(event) => { if (event.target === event.currentTarget) setPhoto(null) }}>
           <button className="lb-close" type="button" aria-label="Close" onClick={() => setPhoto(null)}>×</button>
           <img src={photo.image} alt={photo.alt} />
-          <p>{[photo.title, photo.place].filter(Boolean).join(", ")}</p>
+          <p>
+            {photo.title && <strong>{photo.title}</strong>}
+            {photo.place && <small>{photo.place}</small>}
+          </p>
         </div>
       )}
     </>

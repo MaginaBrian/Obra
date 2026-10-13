@@ -93,7 +93,7 @@ export const filters = [
   { id: "residential", label: "Residential Properties" },
   { id: "public", label: "Public-State Institutions" },
   { id: "religious", label: "Religious Institutions" },
-  { id: "market", label: "Market Complex" },
+  { id: "market", label: "Market Complexes" },
 ]
 
 export const projects = [
