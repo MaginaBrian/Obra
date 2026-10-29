@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { filters } from "../data"
 
 export default function PortfolioGrid({ items, initialFilter = "all" }) {
   const [filter, setFilter] = useState(initialFilter)
-  const [photo, setPhoto] = useState(null)
   const visible = filter === "all" ? items : items.filter((item) => item.cat === filter)
-
-  useEffect(() => {
-    if (!photo) return undefined
-    const onKey = (event) => {
-      if (event.key === "Escape") setPhoto(null)
-    }
-    window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [photo])
 
   return (
     <>
@@ -36,27 +27,17 @@ export default function PortfolioGrid({ items, initialFilter = "all" }) {
         <div className="grid">
           {visible.map((item) => (
             <article className="card" key={item.id}>
-              <button className="card-hit" type="button" onClick={() => setPhoto(item)}>
-                <img src={item.image} alt={item.alt} />
+              <Link className="card-hit" to={`/portfolio/${item.id}`}>
+                <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
                 {(item.title || item.place) && (
                   <span>
                     {item.title && <strong>{item.title}</strong>}
                     {item.place && <small>{item.place}</small>}
                   </span>
                 )}
-              </button>
+              </Link>
             </article>
           ))}
-        </div>
-      )}
-      {photo && (
-        <div className="lightbox is-open" onClick={(event) => { if (event.target === event.currentTarget) setPhoto(null) }}>
-          <button className="lb-close" type="button" aria-label="Close" onClick={() => setPhoto(null)}>×</button>
-          <img src={photo.image} alt={photo.alt} />
-          <p>
-            {photo.title && <strong>{photo.title}</strong>}
-            {photo.place && <small>{photo.place}</small>}
-          </p>
         </div>
       )}
     </>

@@ -33,9 +33,8 @@ export default function Layout() {
   return (
     <>
       <header className="site-header">
-        <a className="skip" href="#main">Skip to content</a>
         <Link className="logo" to="/" aria-label="Obra International home">
-          <img src="/images/logo.png" alt="Obra International — Quantity Surveying, Project Management, Arbitration" />
+          <img src="/images/logo.webp" alt="Obra International — Quantity Surveying, Project Management, Arbitration" width="965" height="128" />
         </Link>
         <button
           className="menu-btn"

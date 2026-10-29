@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { projects } from "../data"
 import { SITE_URL, organization, pages } from "../seo"
 
 function upsertMeta(attr, key, content) {
@@ -25,13 +26,19 @@ function upsertCanonical(href) {
 
 export default function Seo() {
   const { pathname } = useLocation()
-  const page = pages[pathname]
 
   useEffect(() => {
+    const project = projects.find((item) => pathname === `/portfolio/${item.id}`)
+    const page = project
+      ? {
+          title: `${project.title} | Obra International`,
+          description: `${project.title}, ${project.place}. Project description by Obra International.`,
+        }
+      : pages[pathname]
     const title = page?.title ?? "Obra International"
     const description = page?.description ?? organization.description
     const url = `${SITE_URL}${pathname === "/" ? "/" : pathname}`
-    const image = `${SITE_URL}/images/logo.png`
+    const image = `${SITE_URL}/images/logo.webp`
 
     document.title = title
     upsertMeta("name", "description", description)
@@ -56,7 +63,7 @@ export default function Seo() {
       document.head.appendChild(script)
     }
     script.textContent = JSON.stringify(organization)
-  }, [page, pathname])
+  }, [pathname])
 
   return null
 }

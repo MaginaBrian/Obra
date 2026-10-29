@@ -5,11 +5,11 @@ export function ContactFacts() {
     <div>
       <h3>Obra International Ltd</h3>
       <ul className="facts">
-        <li><b>P.O. Box:</b> 3494 – 00200</li>
         <li>Greenhouse Mall</li>
         <li>Second Floor, Suite 10</li>
         <li>Nairobi, Kenya</li>
-        <li><b>Office Phone:</b> <a href="tel:+254202406394">020 240 6394</a></li>
+        <li><b>P.O. Box:</b> 3494 – 00200</li>
+        <li><b>Contact:</b> <a href="tel:+254721986325">+254 721 986 325</a></li>
         <li><b>E-mail:</b> <a href="mailto:info@obraint.co.ke">info@obraint.co.ke</a></li>
       </ul>
     </div>

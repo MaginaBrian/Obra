@@ -31,7 +31,7 @@ export const pages = {
   "/contact": {
     title: "Contact Us | Obra International",
     description:
-      "Obra International Ltd, Greenhouse Mall, Second Floor, Suite 10, Nairobi. Phone 020 240 6394. Email info@obraint.co.ke.",
+      "Obra International Ltd, Greenhouse Mall, Second Floor, Suite 10, Nairobi. Phone +254 721 986 325. Email info@obraint.co.ke.",
   },
 }
 
@@ -40,9 +40,9 @@ export const organization = {
   "@type": "ProfessionalService",
   name: "Obra International Ltd",
   url: SITE_URL,
-  image: `${SITE_URL}/images/logo.png`,
+  image: `${SITE_URL}/images/logo.webp`,
   email: "info@obraint.co.ke",
-  telephone: "+254202406394",
+  telephone: "+254721986325",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Greenhouse Mall, Second Floor, Suite 10",

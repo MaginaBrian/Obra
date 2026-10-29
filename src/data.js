@@ -222,6 +222,16 @@ export const projects = [
     image: "/images/residential/14-ophelia.jpg",
     alt: "Ophelia Apartments, Kilimani, Nairobi",
     featured: true,
+    description: {
+      client: "Sheina Developers Ltd.",
+      architect: "Ecotecture Limited",
+      structural: "Strutec Engineering",
+      mechanical: "EE Engineers",
+      electrical: "EE Engineers",
+      surveyor: "Obra International",
+      contractor: "n/a",
+      others: "n/a",
+    },
   },
   {
     id: "res-15",

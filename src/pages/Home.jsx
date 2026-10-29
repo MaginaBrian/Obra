@@ -22,8 +22,11 @@ export default function Home() {
         </div>
       </section>
       <section className="cta">
-        <div className="cta-photo" style={{ backgroundImage: "url(/images/cta-site.jpg)" }} role="img" aria-label="Construction site" />
-        <div className="cta-panel" style={{ backgroundImage: "url(/images/cta-house.jpg)" }}>
+        <div className="cta-photo">
+          <img src="/images/cta-site.jpg" alt="Construction site" loading="lazy" decoding="async" />
+        </div>
+        <div className="cta-panel">
+          <img src="/images/cta-house.jpg" alt="" loading="lazy" decoding="async" />
           <div>
             <h2>WE'D LOVE TO HEAR FROM YOU.</h2>
             <Link className="btn" to="/contact">Contact Us</Link>
@@ -39,7 +42,7 @@ export default function Home() {
               if (!sample) return null
               return (
                 <Link className="project" key={filter.id} to={`/portfolio?cat=${filter.id}`}>
-                  <img src={sample.image} alt={filter.label} />
+                  <img src={sample.image} alt={filter.label} loading="lazy" decoding="async" />
                   <div className="project-copy">
                     <h3>{filter.label}</h3>
                   </div>
