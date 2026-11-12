@@ -60,9 +60,9 @@ export default function Layout() {
               <li><Link to="/about">The Firm</Link></li>
               <li><Link to="/about#mission">Our Mission</Link></li>
               <li><Link to="/about#vision">Our Vision</Link></li>
-              <li><Link to="/services#others">Others</Link></li>
             </ul>
           </li>
+          <li><NavLink to="/leadership" className={navClass}>Leadership</NavLink></li>
           <li><NavLink to="/contact" className={navClass}>Contact Us</NavLink></li>
         </ul>
       </header>
@@ -71,6 +71,17 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="site-footer">
+        <nav aria-label="Footer">
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/portfolio">Projects</Link>
+          <Link to="/quality">Quality Policy</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/leadership">Leadership</Link>
+          <Link to="/contact">Contact Us</Link>
+        </nav>
+        <p>Obra International Ltd, Greenhouse Mall, Second Floor, Suite 10, Nairobi, Kenya. P.O. Box 3494-00200.</p>
+        <p><a href="tel:+254721986325">+254 721 986 325</a> · <a href="mailto:info@obraint.co.ke">info@obraint.co.ke</a></p>
         <p>© {new Date().getFullYear()} Obra International Ltd. All rights reserved.</p>
       </footer>
       <button

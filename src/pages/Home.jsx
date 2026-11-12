@@ -10,11 +10,14 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <h2 className="section-title">Our Services</h2>
+          <p className="lead" style={{ marginBottom: 36 }}>
+            From Nairobi we work as quantity surveyor, project manager and construction arbitrator across Kenya, including bills of quantities, cost control and dispute resolution.
+          </p>
           <div className="service-grid">
             {services.map((service) => (
               <article className="service" key={service.title}>
                 <img src={service.icon} alt="" />
-                <h3>{service.title}</h3>
+                <h3><Link to="/services">{service.title}</Link></h3>
                 <p>{service.summary}</p>
               </article>
             ))}
@@ -26,7 +29,7 @@ export default function Home() {
           <img src="/images/cta-site.jpg" alt="Construction site" loading="lazy" decoding="async" />
         </div>
         <div className="cta-panel">
-          <img src="/images/cta-house.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="/images/cta-house.jpg" alt="House completed under Obra International project management" loading="lazy" decoding="async" />
           <div>
             <h2>WE'D LOVE TO HEAR FROM YOU.</h2>
             <Link className="btn" to="/contact">Contact Us</Link>

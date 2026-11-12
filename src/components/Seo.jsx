@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import { projects } from "../data"
-import { SITE_URL, organization, pages } from "../seo"
+import { organization, seoFor, SITE_URL } from "../seo"
 
 function upsertMeta(attr, key, content) {
   const selector = `meta[${attr}="${key}"]`
@@ -28,32 +27,31 @@ export default function Seo() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const project = projects.find((item) => pathname === `/portfolio/${item.id}`)
-    const page = project
-      ? {
-          title: `${project.title} | Obra International`,
-          description: `${project.title}, ${project.place}. Project description by Obra International.`,
-        }
-      : pages[pathname]
-    const title = page?.title ?? "Obra International"
-    const description = page?.description ?? organization.description
+    const page = seoFor(pathname)
     const url = `${SITE_URL}${pathname === "/" ? "/" : pathname}`
-    const image = `${SITE_URL}/images/logo.webp`
 
-    document.title = title
-    upsertMeta("name", "description", description)
-    upsertMeta("name", "robots", page ? "index, follow" : "noindex, follow")
+    document.title = page.title
+    upsertMeta("name", "description", page.description)
+    upsertMeta("name", "robots", page.robots)
     upsertCanonical(url)
     upsertMeta("property", "og:type", "website")
     upsertMeta("property", "og:site_name", "Obra International")
-    upsertMeta("property", "og:title", title)
-    upsertMeta("property", "og:description", description)
+    upsertMeta("property", "og:title", page.title)
+    upsertMeta("property", "og:description", page.description)
     upsertMeta("property", "og:url", url)
-    upsertMeta("property", "og:image", image)
-    upsertMeta("name", "twitter:card", "summary")
-    upsertMeta("name", "twitter:title", title)
-    upsertMeta("name", "twitter:description", description)
-    upsertMeta("name", "twitter:image", image)
+    upsertMeta("property", "og:image", page.image)
+    upsertMeta("property", "og:image:alt", page.title)
+    if (page.image.endsWith("/images/og.jpg")) {
+      upsertMeta("property", "og:image:width", "1200")
+      upsertMeta("property", "og:image:height", "630")
+    } else {
+      document.head.querySelector('meta[property="og:image:width"]')?.remove()
+      document.head.querySelector('meta[property="og:image:height"]')?.remove()
+    }
+    upsertMeta("name", "twitter:card", "summary_large_image")
+    upsertMeta("name", "twitter:title", page.title)
+    upsertMeta("name", "twitter:description", page.description)
+    upsertMeta("name", "twitter:image", page.image)
 
     let script = document.getElementById("seo-jsonld")
     if (!script) {

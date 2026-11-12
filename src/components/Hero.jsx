@@ -44,7 +44,7 @@ export default function Hero() {
             aria-hidden={i !== index}
           >
             <div className="slide-inner">
-              <h1>{slide.title}</h1>
+              {i === 0 ? <h1>{slide.title}</h1> : <h2>{slide.title}</h2>}
               <p>{slide.text}</p>
             </div>
           </div>

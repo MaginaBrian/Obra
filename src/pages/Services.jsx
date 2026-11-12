@@ -8,10 +8,10 @@ export default function Services() {
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="wrap">
           {services.map((service) => (
-            <article className="service-block" key={service.title}>
+            <article className="service-block" key={service.title} id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}>
               <img src={service.icon} alt="" />
               <div>
-                <h3>{service.title}</h3>
+                <h2>{service.title}</h2>
                 <p>{service.summary}</p>
               </div>
             </article>

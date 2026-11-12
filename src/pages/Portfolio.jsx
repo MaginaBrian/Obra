@@ -10,6 +10,7 @@ export default function Portfolio() {
   return (
     <>
       <h1 className="page-title">Projects</h1>
+      <p className="lead">Quantity surveying and project management work across Kenya, from housing and public buildings to churches and markets.</p>
       <section className="section" style={{ paddingTop: 36 }}>
         <div className="wrap">
           <PortfolioGrid items={projects} initialFilter={initialFilter} />

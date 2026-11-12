@@ -6,6 +6,7 @@ import Portfolio from "./pages/Portfolio"
 import Project from "./pages/Project"
 import Quality from "./pages/Quality"
 import About from "./pages/About"
+import Leadership from "./pages/Leadership"
 import Contact from "./pages/Contact"
 
 function NotFound() {
@@ -30,7 +31,9 @@ export default function App() {
           <Route path="portfolio/:id" element={<Project />} />
           <Route path="quality" element={<Quality />} />
           <Route path="about" element={<About />} />
+          <Route path="leadership" element={<Leadership />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

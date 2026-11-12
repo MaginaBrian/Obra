@@ -3,13 +3,9 @@ import { projects } from "../data"
 
 const rows = [
   ["client", "Client"],
-  ["architect", "Architect"],
-  ["structural", "Civil/Structural Engineer"],
-  ["mechanical", "Mechanical Engineer"],
-  ["electrical", "Electrical Engineer"],
-  ["surveyor", "Quantity Surveyor"],
-  ["contractor", "Main Contractor"],
-  ["others", "Others"],
+  ["location", "Location"],
+  ["role", "Role"],
+  ["value", "Value"],
 ]
 
 export default function Project() {
@@ -27,7 +23,17 @@ export default function Project() {
     )
   }
 
-  const details = project.description ?? {}
+  const details = { location: project.place, ...(project.description ?? {}) }
+  const related = projects.filter((item) => item.cat === project.cat && item.id !== project.id).slice(0, 3)
+  const role = /project management/i.test(details.role || "")
+    ? "project management"
+    : /quantity/i.test(details.role || "")
+      ? "quantity surveying"
+      : /qs/i.test(details.role || "")
+        ? "quantity surveying, including bills of quantities"
+        : (details.role || "quantity surveying and project management").toLowerCase()
+
+  const fallback = `Obra International provided ${role} for ${project.title} in ${project.place}${details.client ? `, appointed by ${details.client}` : ""}.${details.value ? ` The project value is ${details.value}.` : ""}`
 
   return (
     <>
@@ -37,6 +43,8 @@ export default function Project() {
         <div className="wrap sheet-wrap">
           <img src={project.image} alt={project.alt} />
           <h2>Project Description</h2>
+          <p className="story">{project.story || fallback}</p>
+          <h2>Project Details</h2>
           <table className="sheet">
             <tbody>
               <tr>
@@ -51,7 +59,17 @@ export default function Project() {
               ))}
             </tbody>
           </table>
-          <p className="sheet-back"><Link to="/portfolio">Back to projects</Link></p>
+          <p className="sheet-back"><Link to="/portfolio">Back to projects</Link> · <Link to="/services">Our services</Link></p>
+          {related.length > 0 && (
+            <>
+              <h2>More projects</h2>
+              <ul className="related">
+                {related.map((item) => (
+                  <li key={item.id}><Link to={`/portfolio/${item.id}`}>{item.title}</Link>, {item.place}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </section>
     </>
