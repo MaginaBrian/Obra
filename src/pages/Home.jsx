@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Hero from "../components/Hero"
 import ContactPanel from "../components/ContactPanel"
-import { filters, projects, services } from "../data"
+import { filters, partners, projects, services } from "../data"
 
 export default function Home() {
   return (
@@ -53,6 +53,19 @@ export default function Home() {
               )
             })}
           </div>
+        </div>
+      </section>
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="wrap">
+          <h2 className="section-title">Our Partners</h2>
+          <ul className="partner-grid">
+            {partners.map((partner) => (
+              <li className="partner" key={partner.name}>
+                <img src={partner.image} alt={partner.name} />
+                {partner.label && <span>{partner.label}</span>}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <section className="section" style={{ paddingTop: 10 }}>

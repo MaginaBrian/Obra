@@ -103,6 +103,16 @@ export const serviceStages = [
   },
 ]
 
+export const partners = [
+  { name: "Cytonn", image: "/images/partners/cytonn.png" },
+  { name: "Kenya Civil Aviation Authority", image: "/images/partners/kcaa.png" },
+  { name: "KenGen DC Scheme", image: "/images/partners/kengen.png", label: "KenGen DC Scheme" },
+  { name: "Nakuru County Government", image: "/images/partners/nakuru-county.png" },
+  { name: "State Department for Housing and Urban Development", image: "/images/partners/housing.png" },
+  { name: "Stima Investment Co-operative Society", image: "/images/partners/stima.png" },
+  { name: "Synina Real Estate", image: "/images/partners/synina.png" },
+]
+
 export const filters = [
   { id: "residential", label: "Residential Properties" },
   { id: "public", label: "Public-State Institutions" },
@@ -339,10 +349,10 @@ export const projects = [
   {
     id: "pub-02",
     cat: "public",
-    title: "Kenya Civil Aviation Authority (KCAA)",
+    title: "Kenya Civil Aviation Authority - Air Control & Disaster Recovery Center",
     place: "Mlolongo, Machakos",
     image: "/images/public/02-kcaa.jpg",
-    alt: "Kenya Civil Aviation Authority, Air Control and Disaster Recovery Center, Mlolongo, Machakos",
+    alt: "Kenya Civil Aviation Authority - Air Control and Disaster Recovery Center, Mlolongo, Machakos",
     featured: true,
     story: "Home to critical air traffic infrastructure, the Air Control & Disaster Recovery Center at Mlolongo, Machakos supports the safe management of Kenyan airspace and keeps operations resilient in an emergency. Developed for the Kenya Civil Aviation Authority, it is a specialised facility, and we provided Complete QS Services, combining quantity surveying and project management.",
     description: {

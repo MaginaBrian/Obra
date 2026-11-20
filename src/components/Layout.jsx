@@ -60,9 +60,9 @@ export default function Layout() {
               <li><Link to="/about">The Firm</Link></li>
               <li><Link to="/about#mission">Our Mission</Link></li>
               <li><Link to="/about#vision">Our Vision</Link></li>
+              <li><Link to="/leadership">Leadership</Link></li>
             </ul>
           </li>
-          <li><NavLink to="/leadership" className={navClass}>Leadership</NavLink></li>
           <li><NavLink to="/contact" className={navClass}>Contact Us</NavLink></li>
         </ul>
       </header>
